@@ -24,12 +24,8 @@ public class Enemynornallogic : MonoBehaviour
         rbv.x = Speed;
         rb.velocity = rbv;
 
-<<<<<<< Updated upstream
         Collider2D[] results = new Collider2D[2];
         int count = Physics2D.OverlapCollider(GrondCheck, new ContactFilter2D(), results);
-=======
-        int count = Physics2D.OverlapCollider(GrondCheck, new ContactFilter2D(), Cols);
->>>>>>> Stashed changes
 
         if (count == 0)
         {
@@ -40,31 +36,6 @@ public class Enemynornallogic : MonoBehaviour
         }
 
     }
-<<<<<<< Updated upstream
     public float Speed;
     public Collider2D GrondCheck;
-=======
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        PlayerHealth player;
-        if (collision.rigidbody != null)
-        {
-
-
-            player = collision.rigidbody.GetComponent<PlayerHealth>();
-
-            if (player != null)
-            {
-                player.TakeDamage(Damage);
-            }
-        }
-    }
-
-
-    public int Damage;
-    public float Speed;
-    public Collider2D GrondCheck;
-    public Collider2D[] Cols;
->>>>>>> Stashed changes
 }
