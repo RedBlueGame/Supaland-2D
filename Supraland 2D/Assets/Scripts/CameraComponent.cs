@@ -14,7 +14,9 @@ public class CameraComponent : MonoBehaviour
     void Update()
     {
         transform.position = Player.transform.position;
-        transform.Translate(0 , 0 , -100);
+        transform.Translate(0, UpsetY, -100);
     }
     public GameObject Player;
+
+    public int UpsetY;
 }

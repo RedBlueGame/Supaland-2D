@@ -10,6 +10,8 @@ public class Wallet : MonoBehaviour
 
     public GameObject TextMP;
 
+    
+
 
     // Start is called before the first frame update
     void Start()
