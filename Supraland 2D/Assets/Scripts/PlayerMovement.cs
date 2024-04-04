@@ -29,10 +29,7 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        JumpCount = MaxJumpCount;
-    }
+    
 
     public float Speed;
 
