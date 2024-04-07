@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public GameObject HealtBar;
+    public GameObject HealthBar;
+    public GameObject HealthText;
     public int Health; 
     public int MaxHealth; 
 
@@ -23,8 +25,9 @@ public class PlayerHealth : MonoBehaviour
     }
     private void Update()
     {
-        HealtBar.GetComponent<Slider>().value = Health;
-        HealtBar.GetComponent<Slider>().maxValue = MaxHealth;
+        HealthBar.GetComponent<Slider>().value = Health;
+        HealthBar.GetComponent<Slider>().maxValue = MaxHealth;
+        HealthText.GetComponent<TextMeshProUGUI>().text = Health + "/" + MaxHealth;
     }
 
 }
