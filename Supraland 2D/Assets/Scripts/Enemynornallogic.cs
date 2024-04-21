@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Enemynornallogic : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -24,7 +25,7 @@ public class Enemynornallogic : MonoBehaviour
         rbv.x = Speed;
         rb.velocity = rbv;
 
-        int count = Physics2D.OverlapCollider(GrondCheck, new ContactFilter2D(), Cols);
+        int count = Physics2D.OverlapCollider(GrondCheck,Filter, Cols);
 
         if (count == 0)
         {
@@ -56,5 +57,6 @@ public class Enemynornallogic : MonoBehaviour
     public int Damage;
     public float Speed;
     public Collider2D GrondCheck;
-    public Collider2D[] Cols;
+    public List<Collider2D> Cols;
+    public ContactFilter2D Filter;
 }
