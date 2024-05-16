@@ -18,6 +18,17 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D rb = GetComponent<Rigidbody2D>();  
         Vector2 rbv = rb.velocity;
         rbv.x = Speed * Input.GetAxis("Horizontal");
+        Anima.GetComponent<Animator>().SetFloat("Speed",Mathf.Abs( rbv.x));
+
+        if (rbv.x < 0)
+        {
+            transform.localScale = new Vector3(-1,1,1);
+        }
+
+        if (rbv.x > 0)
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+        }
 
         if ((Input.GetAxis("Jump") > 0) & (JumpCount > 0) & (_jmuptime < 0 ))
         {
@@ -39,5 +50,8 @@ public class PlayerMovement : MonoBehaviour
     public int MaxJumpCount;
 
     private float _jmuptime;
+
+    public GameObject Anima;
+
 }
 
