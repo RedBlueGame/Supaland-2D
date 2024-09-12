@@ -11,12 +11,13 @@ public class MJumpStore : MonoBehaviour
 
 
     private Wallet _wallet;
+    private bool _isActive;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
        Wallet wallet = collision.attachedRigidbody.GetComponent<Wallet>();
 
-        if (wallet != null)
+        if (_isActive && wallet != null)
         {
             _wallet = wallet;
             PriseText.SetActive(true);
@@ -27,7 +28,7 @@ public class MJumpStore : MonoBehaviour
     {
         Wallet wallet = collision.attachedRigidbody.GetComponent<Wallet>();
 
-        if (wallet != null)
+        if (_isActive && wallet != null)
         {
             _wallet = null;
             PriseText.SetActive(false);
@@ -45,7 +46,7 @@ public class MJumpStore : MonoBehaviour
 
     void Update()
     {
-      if ((_wallet != null) && Input.GetKeyDown(KeyCode.E) && (UpgradeCount > 0))
+      if (_isActive && (_wallet != null) && Input.GetKeyDown(KeyCode.E) && (UpgradeCount > 0))
         {
             if (_wallet.Coins >=Prise)
             {
