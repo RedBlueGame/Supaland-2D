@@ -9,9 +9,8 @@ public class SpeedStore : MonoBehaviour
     public int Prise;
 
     public GameObject PriseText;
-
-
-    private Wallet _wallet;
+    public int UpgradeCount;
+    public Wallet _wallet;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -46,16 +45,24 @@ public class SpeedStore : MonoBehaviour
 
     void Update()
     {
-        if ((_wallet != null) && Input.GetKeyDown(KeyCode.E))
+        if ((_wallet != null) && Input.GetKeyDown(KeyCode.E) && (UpgradeCount >0))
         {
             if (_wallet.Coins >= Prise)
             {
                 _wallet.Coins -= Prise;
                 _wallet.GetComponent<PlayerMovement>().Speed *=2 ;
                 Prise = Prise * 2;
+                UpgradeCount = UpgradeCount -1 ; 
             }
         }
 
-        PriseText.GetComponent<TextMeshProUGUI>().text = "Press E<br>X2 Speed<br>" + Prise.ToString() + " Coins"; 
+        if (UpgradeCount > 0)
+        {
+            PriseText.GetComponent<TextMeshProUGUI>().text = "Press E<br>X2 Speed<br>" + Prise.ToString() + " Coins";
+        }
+        else
+        {
+            PriseText.GetComponent<TextMeshProUGUI>().text = "You have bought all items!";
+        }
     }
 }

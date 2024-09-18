@@ -7,17 +7,33 @@ public class MJumpStore : MonoBehaviour
 {
     public int Prise;
     public int UpgradeCount;
+    public int BarrelsToUse;
     public GameObject PriseText;
 
 
     private Wallet _wallet;
-    private bool _isActive;
+ 
 
+  
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Rigidbody2D rb = collision.attachedRigidbody;
+
+        if (rb != null)
+        {
+            HoldableType holdable = rb.GetComponent<HoldableType>();
+            if ((holdable != null) && (BarrelsToUse>0))
+            {
+                Destroy(holdable.gameObject);
+                UpgradeCount++;
+                BarrelsToUse--;
+            }
+        }
+
+
        Wallet wallet = collision.attachedRigidbody.GetComponent<Wallet>();
 
-        if (_isActive && wallet != null)
+        if (wallet != null)
         {
             _wallet = wallet;
             PriseText.SetActive(true);
@@ -28,7 +44,7 @@ public class MJumpStore : MonoBehaviour
     {
         Wallet wallet = collision.attachedRigidbody.GetComponent<Wallet>();
 
-        if (_isActive && wallet != null)
+        if (wallet != null)
         {
             _wallet = null;
             PriseText.SetActive(false);
@@ -46,7 +62,7 @@ public class MJumpStore : MonoBehaviour
 
     void Update()
     {
-      if (_isActive && (_wallet != null) && Input.GetKeyDown(KeyCode.E) && (UpgradeCount > 0))
+      if ((_wallet != null) && Input.GetKeyDown(KeyCode.E) && (UpgradeCount > 0))
         {
             if (_wallet.Coins >=Prise)
             {
@@ -64,8 +80,15 @@ public class MJumpStore : MonoBehaviour
         }
         else
         {
-            PriseText.GetComponent<TextMeshProUGUI>().text = "You have bought all items!";
+            PriseText.GetComponent<TextMeshProUGUI>().text = "Need more barells";
         }
+      
+     if ((UpgradeCount <= 0) && (BarrelsToUse==0)) 
+        {
+            PriseText.GetComponent<TextMeshProUGUI>().text = "You have bought<br> all items!";
+        }
+
+
     }
 
 
