@@ -3957,6 +3957,7 @@ GameObject:
   - component: {fileID: 651778783}
   - component: {fileID: 651778784}
   - component: {fileID: 651778785}
+  - component: {fileID: 651778786}
   m_Layer: 0
   m_Name: PlayerLogic
   m_TagString: Untagged
@@ -4051,6 +4052,20 @@ MonoBehaviour:
   HealthText: {fileID: 109645626}
   Health: 25
   MaxHealth: 25
+--- !u!114 &651778786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 651778780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74c1a21401d1d9a49bd8a3c70ecae4ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sword: {fileID: 1962044100}
+  MucGiffin: {fileID: 1716282339}
 --- !u!1 &668605650
 GameObject:
   m_ObjectHideFlags: 0
@@ -9104,7 +9119,7 @@ GameObject:
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1716282340
 Transform:
   m_ObjectHideFlags: 0
@@ -10427,7 +10442,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!61 &1962044101
 BoxCollider2D:
   m_ObjectHideFlags: 0
