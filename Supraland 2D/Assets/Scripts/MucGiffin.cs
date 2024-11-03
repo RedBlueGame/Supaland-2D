@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 public class MucGiffin : MonoBehaviour
 {
@@ -9,6 +9,7 @@ public class MucGiffin : MonoBehaviour
     public float Cooldown;
     public float AmmoSpeed;
     public int AmmoDamage;
+    public GameObject LightPanel;
 
     private float _timer;
 
@@ -34,8 +35,8 @@ public class MucGiffin : MonoBehaviour
             _timer = Cooldown;
         }
 
-        
 
+        LightPanel.GetComponent<Image>().fillAmount = Mathf.InverseLerp(Cooldown, 0, _timer);
 
     }
 }

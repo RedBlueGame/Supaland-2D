@@ -25,9 +25,9 @@ public class Enemynornallogic : MonoBehaviour
         rbv.x = Speed;
         rb.velocity = rbv;
 
-        int count = Physics2D.OverlapCollider(GrondCheck,Filter, Cols);
-
-        if (count == 0)
+        int floorCount = Physics2D.OverlapCollider(GrondCheck,Filter, Cols);
+        int wallCount = Physics2D.OverlapCollider(WallCheck, Filter, Cols);
+        if ((floorCount == 0) || (wallCount > 0))
         {
             Vector3 Scale = transform.localScale; 
             Scale.x *= -1;
@@ -57,6 +57,7 @@ public class Enemynornallogic : MonoBehaviour
     public int Damage;
     public float Speed;
     public Collider2D GrondCheck;
+    public Collider2D WallCheck;
     public List<Collider2D> Cols;
     public ContactFilter2D Filter;
 }

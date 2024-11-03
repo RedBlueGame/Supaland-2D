@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Sword : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class Sword : MonoBehaviour
     public ContactFilter2D Filter;
     public int Damage;
     public float Cooldown;
+    public GameObject LightPanel;
 
     private float _timer;
 
@@ -32,5 +34,7 @@ public class Sword : MonoBehaviour
             }
             _timer = Cooldown;
         }
+
+        LightPanel.GetComponent<Image>().fillAmount = Mathf.InverseLerp(Cooldown, 0, _timer);
     }
 }
