@@ -38,6 +38,10 @@ public class PlayerMovement : MonoBehaviour
         }
         rb.velocity = rbv; 
 
+        if (rb.IsTouching(ContactFilter))
+        {
+            JumpCount = MaxJumpCount;
+        }
     }
 
     
@@ -52,6 +56,8 @@ public class PlayerMovement : MonoBehaviour
     private float _jmuptime;
 
     public GameObject Anima;
+    public ContactFilter2D ContactFilter;
+
 
 }
 
