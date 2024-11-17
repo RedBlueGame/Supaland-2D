@@ -233,6 +233,7 @@ GameObject:
   - component: {fileID: 1487333442430324700}
   - component: {fileID: 8301189836811092636}
   - component: {fileID: -7865823077977458212}
+  - component: {fileID: 4527478167003243241}
   m_Layer: 0
   m_Name: WizardEnemy
   m_TagString: Untagged
@@ -293,6 +294,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: 75
   MaxHealth: 75
+--- !u!114 &4527478167003243241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2139095887804109252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4da8e238b9be0947a0d89a0ca1550c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damage: 5
+  Speed: 4
+  Cooldown: 1.7
+  AttackRange: 15
+  Patron: {fileID: 8889751012448297782, guid: fbf4e7d91984b2d48836fffe4479460d, type: 3}
+  GrondCheck: {fileID: 29338037699357340}
+  WallCheck: {fileID: 8067341403328687429}
+  Cols: []
+  Filter:
+    useTriggers: 0
+    useLayerMask: 1
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 8
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0
 --- !u!1 &3541111746172050122
 GameObject:
   m_ObjectHideFlags: 0

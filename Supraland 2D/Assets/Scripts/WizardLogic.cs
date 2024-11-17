@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class WizardLogic : MonoBehaviour
@@ -7,7 +8,8 @@ public class WizardLogic : MonoBehaviour
     public int Damage;
     public float Speed;
     public float Cooldown;
-    public float MaxDistance;
+    public float AttackRange;
+    public GameObject Patron;
     public Collider2D GrondCheck;
     public Collider2D WallCheck;
     public List<Collider2D> Cols;
@@ -15,18 +17,28 @@ public class WizardLogic : MonoBehaviour
 
     private float _timer;
     private PlayerHealth _playerHealth;
+    private List<RaycastHit2D> _walls = new();
 
-     void Start()
+    void Start()
     {
         _playerHealth = FindObjectOfType<PlayerHealth>();
     }
     void Update()
     {
         _timer -= Time.deltaTime;
-        _timer = Cooldown;
 
         float distance;
         distance = Vector2.Distance(_playerHealth.transform.position, transform.position);
+
+        Vector2 rayDir;
+        rayDir = _playerHealth.transform.position - transform.position;
+        int walls = Physics2D.Raycast(_playerHealth.transform.position, rayDir, Filter, _walls, AttackRange);
+
+        if ((walls == 0) && (distance < AttackRange) && (_timer < 0))
+        {
+            Instantiate(Patron, transform.position, transform.rotation);
+            _timer = Cooldown;
+        }
     }
 
     public void FixedUpdate()
