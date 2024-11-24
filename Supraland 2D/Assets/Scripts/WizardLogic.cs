@@ -36,7 +36,7 @@ public class WizardLogic : MonoBehaviour
 
         if ((walls == 0) && (distance < AttackRange) && (_timer < 0))
         {
-            Instantiate(Patron, transform.position, transform.rotation);
+            Instantiate(Patron, transform.position + Vector3.up, transform.rotation);
             _timer = Cooldown;
         }
     }

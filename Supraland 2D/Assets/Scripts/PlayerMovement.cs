@@ -6,6 +6,11 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    private void Start()
+    {
+        _rb = GetComponent<Rigidbody2D>();        
+    }
+
     void Update()
     {
         _jmuptime-=Time.deltaTime;
@@ -15,8 +20,7 @@ public class PlayerMovement : MonoBehaviour
     public void FixedUpdate()
     { 
 
-    Rigidbody2D rb = GetComponent<Rigidbody2D>();  
-        Vector2 rbv = rb.velocity;
+        Vector2 rbv = _rb.velocity;
         rbv.x = Speed * Input.GetAxis("Horizontal");
         Anima.GetComponent<Animator>().SetFloat("Speed",Mathf.Abs( rbv.x));
 
@@ -30,21 +34,26 @@ public class PlayerMovement : MonoBehaviour
             transform.localScale = new Vector3(1, 1, 1);
         }
 
+
         if ((Input.GetAxis("Jump") > 0) & (JumpCount > 0) & (_jmuptime < 0 ))
         {
             rbv.y = JumpStrength;
             JumpCount--;
             _jmuptime = 0.7f;
         }
-        rb.velocity = rbv; 
 
-        if (rb.IsTouching(ContactFilter))
+        _rb.velocity = rbv; 
+
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (_rb.IsTouching(ContactFilter))
         {
             JumpCount = MaxJumpCount;
         }
+        
     }
-
-    
 
     public float Speed;
 
@@ -58,6 +67,7 @@ public class PlayerMovement : MonoBehaviour
     public GameObject Anima;
     public ContactFilter2D ContactFilter;
 
+    private Rigidbody2D _rb;
+
 
 }
-

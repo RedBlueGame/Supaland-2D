@@ -19,17 +19,17 @@ public class WizardEnemyAmmo : MonoBehaviour
     void Update()
     {
         Target = _player.transform.position;
-        transform.position = Vector3.MoveTowards(transform.position, Target, Time.deltaTime * Speed);
+        transform.position = Vector3.MoveTowards(transform.position, Target + Vector3.up, Time.deltaTime * Speed);
         if (transform.position == Target)
         {
             Destroy(gameObject);
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         Rigidbody2D rb;
-        rb = collision.rigidbody;
+        rb = collision.attachedRigidbody;
         if (rb != null)
         {
 
@@ -47,4 +47,5 @@ public class WizardEnemyAmmo : MonoBehaviour
             Destroy(gameObject);
         }
     }
+   
 }
