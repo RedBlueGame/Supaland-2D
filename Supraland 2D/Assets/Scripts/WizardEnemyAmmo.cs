@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WizardEnemyAmmo : MonoBehaviour
 {
@@ -38,6 +39,13 @@ public class WizardEnemyAmmo : MonoBehaviour
             if (playerHealth != null)
             {
                 playerHealth.TakeDamage(Damage);
+                Destroy(gameObject);
+            }
+            PlayerDebuffs playerDebuffs;
+            playerDebuffs = rb.GetComponent<PlayerDebuffs>();
+            if (playerDebuffs != null)
+            {
+                playerDebuffs.BecomeBlind();
                 Destroy(gameObject);
             }
         }
