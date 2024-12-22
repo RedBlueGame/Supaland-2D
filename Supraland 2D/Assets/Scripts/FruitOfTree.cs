@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Coin : MonoBehaviour
+public class FruitOfTree : MonoBehaviour
 {
+    public int HealthPoints;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,18 +21,14 @@ public class Coin : MonoBehaviour
     {
         if (collision.isTrigger != false)
         {
-            Wallet player = collision.attachedRigidbody.GetComponent<Wallet>();
+            PlayerHealth playerHealth = collision.attachedRigidbody.GetComponent<PlayerHealth>();
 
-            if (player != null)
+            if ((playerHealth != null) && (playerHealth.Health < playerHealth.MaxHealth))
             {
                 Destroy(gameObject);
-
-                player.Coins += 1;
+                playerHealth.AddHealth(HealthPoints);
             }
         }
-        
+
     }
-
-
-
 }

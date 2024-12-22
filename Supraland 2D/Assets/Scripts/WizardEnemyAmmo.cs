@@ -31,7 +31,7 @@ public class WizardEnemyAmmo : MonoBehaviour
     {
         Rigidbody2D rb;
         rb = collision.attachedRigidbody;
-        if (rb != null)
+        if ((rb != null) && (collision.isTrigger == false)) 
         {
 
             PlayerHealth playerHealth;
@@ -50,7 +50,7 @@ public class WizardEnemyAmmo : MonoBehaviour
             }
         }
 
-        if (rb == null)
+        if ((rb == null) && (collision.isTrigger == false))
         {
             Destroy(gameObject);
         }

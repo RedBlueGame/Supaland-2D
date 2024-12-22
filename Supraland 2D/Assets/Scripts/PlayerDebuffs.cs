@@ -16,8 +16,18 @@ public class PlayerDebuffs : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
+
+    public void ClearDebuffs()
+    {
+
+
+        _deltaA = 0;
+        _currentA = 0;
+        Image.color = new(0f, 0f, 0f, _currentA);
+    }
+
 
     private void Update()
     {

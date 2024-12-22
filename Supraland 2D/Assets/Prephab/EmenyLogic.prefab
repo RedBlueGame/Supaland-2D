@@ -235,6 +235,7 @@ GameObject:
   - component: {fileID: 8178654158051729123}
   - component: {fileID: 8178654158051729122}
   - component: {fileID: 3570794808810874975}
+  - component: {fileID: -2345216168538111528}
   m_Layer: 27
   m_Name: EmenyLogic
   m_TagString: Untagged
@@ -339,6 +340,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Prefab: {fileID: 8946652234766444710, guid: 4c9c757d9964a3b4db19ba9cbd8ff804, type: 3}
+  ChanceDrop: 0.5
+--- !u!114 &-2345216168538111528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8178654158051729118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 774e8207c47fa70438946e8a4127b689, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Prefab: {fileID: 6181414774940751860, guid: 223339d25a39ed341bae0c36a6d11169, type: 3}
+  ChanceDrop: 0.7
 --- !u!1 &8178654158481293219
 GameObject:
   m_ObjectHideFlags: 0

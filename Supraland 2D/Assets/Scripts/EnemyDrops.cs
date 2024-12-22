@@ -6,6 +6,7 @@ using UnityEngine;
 public class EnemyDrops : MonoBehaviour
 {
     public GameObject Prefab;
+    public float ChanceDrop;
     private void OnDestroy()
     {
        
@@ -14,9 +15,10 @@ public class EnemyDrops : MonoBehaviour
         EnemyHealth health;
         health = GetComponent<EnemyHealth>();
 
-        if ((roll < 0.5f) && (health.Health <= 0))
+        if ((roll < ChanceDrop) && (health.Health <= 0))
         {
-            Instantiate(Prefab,transform.position + Vector3.up,transform.rotation);
+           GameObject go = Instantiate(Prefab,transform.position + Vector3.up,transform.rotation);
+           Destroy(go,10f);
         }
     }
 }
