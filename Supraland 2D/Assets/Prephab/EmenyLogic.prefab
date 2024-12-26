@@ -339,7 +339,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 774e8207c47fa70438946e8a4127b689, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Prefab: {fileID: 8946652234766444710, guid: 4c9c757d9964a3b4db19ba9cbd8ff804, type: 3}
+  Prefab: {fileID: 2194554894663600215, guid: 1fba233f306231848ab2529fcb69f876, type: 3}
   ChanceDrop: 0.5
 --- !u!114 &-2345216168538111528
 MonoBehaviour:
@@ -353,7 +353,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 774e8207c47fa70438946e8a4127b689, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Prefab: {fileID: 6181414774940751860, guid: 223339d25a39ed341bae0c36a6d11169, type: 3}
+  Prefab: {fileID: 958984785523229850, guid: b58db113ee51e7f4b9c2c962146180dc, type: 3}
   ChanceDrop: 0.7
 --- !u!1 &8178654158481293219
 GameObject:
