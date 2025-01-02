@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3488244248683939151}
   - component: {fileID: -376268662147300864}
   - component: {fileID: -7717483189608729741}
+  - component: {fileID: 1544979257220375086}
   m_Layer: 0
   m_Name: Ammo
   m_TagString: Untagged
@@ -76,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: -1240659418, guid: 1dcbe299b34d34445870d9a428eb8a8b, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -100,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 0
-  AmmoDamage: 3
+  Damage: 0
 --- !u!58 &-376268662147300864
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -114,9 +115,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.119426966, y: 0.025858462}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.5473865
 --- !u!50 &-7717483189608729741
 Rigidbody2D:
   serializedVersion: 4
@@ -138,3 +139,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!95 &1544979257220375086
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5366163037256597240}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 19d14296932d09c479bf809b0bfa9620, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
