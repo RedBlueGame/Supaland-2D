@@ -7,6 +7,7 @@ public class EnemyHealth : MonoBehaviour
 {
     public int Health;
     public int MaxHealth;
+    public AudioClip DeathSFX;
 
     public void TakeDamage(int damage)
     {
@@ -14,6 +15,7 @@ public class EnemyHealth : MonoBehaviour
 
         if (Health <= 0)
         {
+            FindObjectOfType<SFX>().PlayClip(DeathSFX);
             Destroy(gameObject);
         }
     }

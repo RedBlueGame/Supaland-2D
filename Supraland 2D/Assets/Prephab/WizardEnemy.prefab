@@ -294,6 +294,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: 75
   MaxHealth: 75
+  DeathSFX: {fileID: 8300000, guid: b809fbc6a2c0e4f418e1d4836497b462, type: 3}
 --- !u!114 &4527478167003243241
 MonoBehaviour:
   m_ObjectHideFlags: 0
