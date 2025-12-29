@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6604005363815772479}
   - component: {fileID: 8668330516547786869}
   - component: {fileID: 5410565875305290313}
-  m_Layer: 0
+  m_Layer: 27
   m_Name: DamagedWood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,6 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: 40
   MaxHealth: 40
+  DeathSFX: {fileID: 0}
 --- !u!61 &8668330516547786869
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4900763472803314864}
   - component: {fileID: -3026440040490468805}
   - component: {fileID: -3674269999179157996}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Rock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,6 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: 125
   MaxHealth: 125
+  DeathSFX: {fileID: 0}
 --- !u!61 &-3026440040490468805
 BoxCollider2D:
   m_ObjectHideFlags: 0

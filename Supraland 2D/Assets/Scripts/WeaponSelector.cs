@@ -16,6 +16,11 @@ public class WeaponSelector : MonoBehaviour
     public bool HasMucGiffin;
     public bool HasForceBeam;
 
+    public void UnlockMucGugginUlt()
+    {
+        MucGiffin.GetComponent<MucGiffin>().UnlockUlt() ;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
